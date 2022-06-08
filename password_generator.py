@@ -20,11 +20,11 @@ random_number = numbers[random.randint(0,8)]
 random_symbol = symbols[random.randint(0,(len(symbols)-1))]
 
 password = []
-for letter in range(0, nr_letters):
+for letter in range(0, nr_letters+1):
   password.append(letters[random.randint(0,51)])
-for number in range(0, nr_numbers):
+for number in range(0, nr_numbers+1):
   password.append(numbers[random.randint(0,8)])
-for symbol in range(0, nr_symbols):
+for symbol in range(0, nr_symbols+1):
   password.append(symbols[random.randint(0,(len(symbols)-1))])
 random.shuffle(password)
 print("".join(password))
