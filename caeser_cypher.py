@@ -7,23 +7,16 @@ answer = []
 
 
 def caeser(direction, text, shift):
-  if direction == 'encode':
-    for letter in text:
-      if letter in alphabet:
-        answer.append(alphabet[(alphabet.index(letter)+shift)%26])
-      else:
-        answer.append(letter)
-    encrypted_message = "".join(answer)  
-    print("Your encrypted message is " + encrypted_message)
-  else:
-    for letter in text:
-      if letter in alphabet:
-        answer.append(alphabet[(alphabet.index(letter)-shift)%26])
-      else:
-        answer.append(letter)
-    encrypted_message = "".join(answer)  
-    print("Your encrypted message is " + encrypted_message)
+  if direction == 'decode':
+    shift *= -1
+  for letter in text:
+    if letter in alphabet:
+      answer.append(alphabet[(alphabet.index(letter)+shift)%26])
+    else:
+      answer.append(letter)
+  complete_message = "".join(answer)  
+  print("Your message is " + complete_message)
+  
+caeser(direction=direction, text=text, shift=shift)
   
 
- 
-caeser(direction=direction, text=text, shift=shift)
