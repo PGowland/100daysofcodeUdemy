@@ -18,7 +18,7 @@ def caeser(direction, text, shift):
   else:
     for letter in text:
       if letter in alphabet:
-        answer.append(alphabet[(alphabet.index(letter)+shift)%26])
+        answer.append(alphabet[(alphabet.index(letter)-shift)%26])
       else:
         answer.append(letter)
     encrypted_message = "".join(answer)  
